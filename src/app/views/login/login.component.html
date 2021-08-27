@@ -1,0 +1,49 @@
+<main>
+  <div class="blue-background-top"></div>
+  <div class="royal-background-top"></div>
+
+  <div class="login">
+    <form (ngSubmit)="onSubmitForm()" [formGroup]="formLogin">
+      <div class="login-header">
+                <span class="login-logo">
+                    Forum
+                    <span class="login-logo-blue-sqare">
+                        Zee
+                    </span>
+                </span>
+      </div>
+      <div class="login-body flex-column">
+        <div class="row">
+          <ul class="login-menu">
+            <li><a class="login-menu-item" routerLink="../create-account">Cadastrar-ser</a></li>
+            <li class="login-menu-item active">Login</li>
+          </ul>
+        </div>
+        <div class="row">
+          <div class="flex-column">
+            <label class="login-label-field" for="login-field-email">Email</label>
+            <input class="login-field" formControlName="email" id="login-field-email" maxlength="250"
+                   required type="email">
+          </div>
+        </div>
+        <div class="row">
+          <div class="flex-column">
+            <label class="login-label-field" for="login-field-password">Senha</label>
+            <input class="login-field" formControlName="password" id="login-field-password" maxlength="250"
+                   required type="password">
+          </div>
+        </div>
+
+
+
+      </div>
+      <div class="login-footer">
+        <div class="row">
+          <button [disabled]="!formLogin.valid" class="login-button-submit" type="submit">Login
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</main>
+

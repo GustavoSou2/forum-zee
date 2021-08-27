@@ -1,0 +1,14 @@
+<HeaderGS></HeaderGS>
+<main>
+
+  <div class="posts-case" *ngFor="let post of posts">
+    <CardPostGS
+      [datepost]="post.data_post"
+      [description]="post.description"
+      [id]="post._id"
+      [likes]="post.likes"
+      [username]="post.resp_username"
+    ></CardPostGS>
+  </div>
+
+</main>

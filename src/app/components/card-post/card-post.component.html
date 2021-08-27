@@ -1,0 +1,22 @@
+  <div class="post" [routerLink]="['/', 'post']" [queryParams]="{id: id}">
+    <div class="header">
+      <mat-icon aria-hidden="false" class="account_perfil">account_circle</mat-icon>
+      <div class="haeder-desc">
+        <span>{{ username }}</span>
+        <span class="date-span">{{ datepost }}</span>
+      </div>
+    </div>
+    <div class="body">
+      <span>{{ description }}</span>
+      <div class="reaction-opt">
+        <div class="reaction">
+          <mat-icon aria-hidden="false">favorite_border</mat-icon>
+          <span>{{ likes }}</span>
+        </div>
+        <div class="reaction">
+          <mat-icon aria-hidden="false">chat_bubble_outline</mat-icon>
+          <span>2</span>
+        </div>
+      </div>
+    </div>
+  </div>

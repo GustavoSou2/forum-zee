@@ -1,0 +1,48 @@
+
+.post {
+  width: 610px;
+  height: max-content;
+  border-radius: 12px;
+  display: flex;
+  box-shadow: 0 .3em .9em #39393930;
+  flex-direction: column;
+  background-color: #fff;
+  padding: 0 10px;
+  cursor: pointer;
+  transition: .3s ease;
+  border: 2px solid transparent;
+}
+.post:hover {
+  border: 2px solid #3907ff;
+}
+.header {
+  height: 65px;
+  display: flex;
+  align-items: center;
+  margin: 0 20px;
+  gap: 10px;
+  border-bottom: 1px solid #efefef;
+}
+.haeder-desc {
+  display: flex;
+  flex-direction: column;
+}
+.date-span {
+  font-size: 12px;
+  color: #39393970;
+}
+.body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  color: #39393985;
+  gap: 20px;
+}
+.reaction-opt {
+  display: flex;
+  gap: 20px;
+}
+.reaction {
+  display: flex;
+  align-items: center;
+}

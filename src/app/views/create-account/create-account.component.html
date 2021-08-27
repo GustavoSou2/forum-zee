@@ -1,0 +1,116 @@
+<main>
+  <div class="blue-background-top"></div>
+  <div class="royal-background-top"></div>
+
+  <div class="create-account">
+    <form (ngSubmit)="onSubmitForm()" [formGroup]="formCreateAccount">
+      <div class="create-account-header">
+                <span class="create-account-logo">
+                    Forum
+                    <span class="create-account-logo-blue-sqare">
+                        Zee
+                    </span>
+                </span>
+      </div>
+      <div class="create-account-body flex-column">
+        <div class="row">
+          <ul class="create-account-menu">
+            <li class="create-account-menu-item active">Cadastrar-ser</li>
+            <li><a class="create-account-menu-item" routerLink="../login">Login</a></li>
+          </ul>
+        </div>
+        <div class="row">
+          <div class="flex-column">
+            <label class="create-account-label-field" for="create-account-field-first-name">Nome</label>
+            <input class="create-account-field" formControlName="first_name" id="create-account-field-first-name" maxlength="250"
+                   required type="text">
+          </div>
+        </div>
+        <div class="row">
+          <div class="flex-column">
+            <label class="create-account-label-field" for="create-account-field-last-name">Sobrenome</label>
+            <input class="create-account-field" formControlName="last_name" id="create-account-field-last-name" maxlength="250"
+                   required type="text">
+          </div>
+        </div>
+        <div class="row">
+          <div class="flex-column">
+            <label class="create-account-label-field" for="create-account-field-phone">Telefone</label>
+            <input class="create-account-field" formControlName="phone" id="create-account-field-phone" required
+                   type="text">
+          </div>
+        </div>
+        <div class="row">
+          <div class="flex-column">
+            <label class="create-account-label-field" for="create-account-field-email">Email</label>
+            <input class="create-account-field" formControlName="email" id="create-account-field-email" maxlength="250"
+                   required type="email">
+          </div>
+        </div>
+        <div class="row">
+          <div class="flex-column">
+            <label class="create-account-label-field" for="create-account-field-password">Senha</label>
+            <input class="create-account-field" formControlName="password" id="create-account-field-password" maxlength="250"
+                   required type="password">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="create-account-confirm">
+            <input class="confirm_terms" formControlName="confirm_terms" id="create-account-confirm-terms"
+                   required type="checkbox">
+            <span>Aceito os termo de uso do ForumZee</span>
+          </div>
+        </div>
+
+      </div>
+      <div class="create-account-footer">
+        <div class="row">
+          <button [disabled]="!formCreateAccount.valid" class="create-account-button-submit" type="submit">Cadastrar
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</main>
+<!--
+
+
+import { Injectable } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { map, mergeMap } from 'rxjs/operators';
+
+
+@Injectable()
+export class ServicesService {
+
+  constructor(
+    public _db:AngularFirestore,
+    public auth: AngularFireAuth
+  ) { }
+
+  getAll() {
+    return this._db.collection('posts').snapshotChanges()
+      .pipe(mergeMap((snapshot) => this._db.collection('posts').valueChanges().pipe(map(((values) =>  (values as Record<string, string>[]).map((value, index) => ({...value, _id:snapshot[index].payload.doc.id}))
+      )))))
+  }
+
+  addPost(formData: any, key_user:any, username: any) {
+    const date = new Date();
+    const day = String(date.getDate()).padStart(2, '0');
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const year = date.getFullYear();
+    const dataNow = day + '/' + month + '/' + year;
+
+    return this._db.collection('posts').add({
+      data_post: dataNow,
+      description: formData.description,
+      id_user: key_user,
+      resp_username: username
+    })
+  }
+}
+
+
+ -->

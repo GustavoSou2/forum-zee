@@ -1,0 +1,36 @@
+main {
+  width: calc(100vw - 55px);
+  height: calc(100vh - 55px);
+  background-color: #efefef;
+
+  position: fixed;
+  overflow-y: auto;
+  padding: 0 100px;
+  margin: 45px 0 0;
+  right: 0;
+  bottom: 0;
+}
+
+.post {
+  width: 80%;
+  height: auto;
+  font-family: Roboto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-left: 120px;
+  margin-top: 55px;
+}
+
+.post-header {
+  display: flex;
+  flex-direction: column;
+}
+.post-body {
+  width: 70%;
+  font-size: 23px;
+  letter-spacing: .04px;
+  color: #39393970;
+  word-break: break-all;
+}
